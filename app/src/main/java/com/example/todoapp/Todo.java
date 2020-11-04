@@ -1,12 +1,18 @@
 package com.example.todoapp;
 
-public class Todo {
+import java.util.UUID;
 
+public class Todo {
+    //private UUID uuid = UUID.randomUUID();
     private String title;
     private String text;
 
     public Todo(String title, String text) {
         this.title = title;
+        this.text = text;
+    }
+
+    public Todo(String text) {
         this.text = text;
     }
 
