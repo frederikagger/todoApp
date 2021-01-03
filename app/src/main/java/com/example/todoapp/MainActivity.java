@@ -15,7 +15,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList<Todo> todos = new ArrayList<>();
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     private ArrayAdapter<Todo> arrayAdapter;
     private ListView mylistview;
 
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         listener();
         attachOnClick();
     }
-
 
     public void setArrayToView() {
         this.mylistview = findViewById(R.id.listview);
@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
             for(DocumentSnapshot snap : values.getDocuments()){
                 String title = snap.getId();
                 String text = snap.get("text").toString();
-                this.todos.add(new Todo(title, text));
+                String path = snap.get("path").toString();
+                this.todos.add(new Todo(title, text, path));
                 this.arrayAdapter.notifyDataSetChanged();
             }
         });
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Detailview.class);
         intent.putExtra("title", this.todos.get(position).getTitle());
         intent.putExtra("text", this.todos.get(position).getText());
+        intent.putExtra("path", this.todos.get(position).getPath());
         startActivity(intent);
     }
 }

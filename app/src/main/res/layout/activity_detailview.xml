@@ -8,14 +8,35 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="392dp"
-        android:layout_height="669dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="393dp"
+        android:layout_height="285dp"
         android:text="lorem ipsum hjlegnwjlegnewg"
         android:textColor="#009688"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="211dp"
+        android:layout_height="305dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="142dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="132dp"
+        android:text="Choose image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

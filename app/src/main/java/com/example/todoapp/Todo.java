@@ -1,19 +1,23 @@
 package com.example.todoapp;
 
-import java.util.UUID;
-
 public class Todo {
     //private UUID uuid = UUID.randomUUID();
     private String title;
     private String text;
+    private String path;
 
-    public Todo(String title, String text) {
+    public Todo(String title, String text, String path) {
         this.title = title;
         this.text = text;
+        this.path = path;
     }
 
-    public Todo(String text) {
-        this.text = text;
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getTitle() {
